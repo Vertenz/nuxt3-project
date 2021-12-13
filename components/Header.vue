@@ -1,0 +1,114 @@
+<template>
+    <header class="header" id="header">
+        <Menu />
+        <div class="header__text">
+            <h1>Lorem, ipsum.</h1>
+            <h2>{{ title }}</h2>
+        </div>
+    </header>
+    <div class="line"></div>
+    <div class="arrow-box" @click="scrollNext">
+        <div class="arrow-box__el arrow-box__el_left"></div>
+        <div class="arrow-box__el arrow-box__el_right"></div>
+    </div>
+</template>
+
+<script setup>
+async function setGradient(el, percent) {
+        let promise = new Promise((resolve) => {
+            setTimeout(() => {
+                percent++;
+                el.style.background = `linear-gradient(-70deg, var(--block-bg) ${percent}%, rgba(0, 0, 0, 0) 31%), url('/_nuxt/static/bg1.jpg')`;
+                el.style.backgroundSize = 'cover';
+                el.style.backgroundPosition = '50% 21%';
+                el.style.backgroundRepeat = 'no-repeat';
+                resolve(percent);
+            }, 35)
+        })
+       return promise;
+}
+
+
+async function reval() {
+    const header = document.getElementById('header');
+    let percent = -10;
+    while (percent < 30) {
+        percent = await setGradient(header, percent).then(result => result);
+    }
+}
+
+onMounted(reval);
+
+function scrollNext() {
+    const nextEl = document.getElementsByTagName('section');
+    nextEl[0].scrollIntoView();
+}
+
+let title = useTitle();
+</script>
+
+<style lang="scss" scoped>
+@keyframes setShadow {
+    from {
+        text-shadow: 0 0 var(--shadow);
+    }
+
+    to {
+        text-shadow: 2px 3px var(--shadow);
+    }
+}
+
+@keyframes blinkArrow {
+    from {
+        background: #d9005b;
+    }
+
+    to {
+        background: #f18db7;
+    }
+    
+}
+.header {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1em;
+    color: #fff;
+    margin-bottom: 20px;
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        animation: 3s infinite alternate setShadow;
+    }
+}
+
+.arrow-box {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    min-width: max-content;
+    max-height: max-content;
+    z-index: 3;
+    cursor: pointer;
+    &__el {
+        width: 4px;
+        height: 15px;
+        background-color: var(--block-bg);
+        animation: 3s infinite alternate blinkArrow;
+        border-radius: 36%;
+        &_right {
+            transform: rotate(45deg);
+            position: absolute;
+            left: 4.5px;
+        }
+        &_left {
+            transform: rotate(-45deg);
+            position: absolute;
+            left: -4.5px;
+        }
+    }
+}
+</style>
