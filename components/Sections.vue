@@ -1,17 +1,17 @@
 <template>
-    <section class="sections" id="sections">
-        <div class="sections-block" v-for="section in arrSections" :key="section.id">
-            <NuxtLink :to="section.scrLink" class="sections-block__link">
-                <div class="sections-block__icon">
-                    <img :src="section.imgSrc" :alt="section.description">
-                </div>
-                <div class="sections-block__text">
-                    <h2>{{ section.title }}</h2>
-                    <i>{{ section.description }}</i>
-                </div>
-            </NuxtLink>
-        </div>
-    </section>
+        <section class="sections" id="sections">
+            <div class="sections-block" v-for="section in arrSections" :key="section.id">
+                <NuxtLink :to="section.scrLink" class="sections-block__link">
+                    <div class="sections-block__icon">
+                        <img :src="section.imgSrc" :alt="section.description">
+                    </div>
+                    <div class="sections-block__text">
+                        <h2>{{ section.title }}</h2>
+                        <i>{{ section.description }}</i>
+                    </div>
+                </NuxtLink>
+            </div>
+        </section>
 </template>
 
 <script setup>
@@ -46,7 +46,7 @@ const arrSections = [
         }
     ];
 let title = useTitle();
-title.value = 'Главная'
+title.value = 'Главная';
 </script>
 
 

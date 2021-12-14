@@ -31,6 +31,10 @@ export default {
                         path: '/test'
                     },
                     {
+                        title: 'Каршеринг',
+                        path: '/carsher'
+                    },
+                    {
                         title: 'About',
                         path: '/about'
                     }
@@ -90,7 +94,7 @@ export default {
     bottom: 0;
     width: 100vw;
     height: 1000vh;
-    z-index: 2;
+    z-index: 4;
     background: linear-gradient(110deg, rgba(52, 28, 60, 1) 18%, rgba(61, 29, 29, 0.7) 1%);
     &__ul {
         display: flex;
