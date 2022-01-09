@@ -43,6 +43,7 @@ export default {
 }
 body {
     background-color: var(--main-bg-color);
+    scroll-behavior: smooth;
 }
 a {
     text-decoration: none;

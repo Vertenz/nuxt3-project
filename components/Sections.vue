@@ -19,30 +19,30 @@ const arrSections = [
         {
             id: 0,
             imgSrc: '../static/ic-test.png',
-            scrLink: '/',
-            title: 'Test',
-            description: 'lorem lorem'
+            scrLink: '/pets',
+            title: 'Pet проекты',
+            description: 'pet и доступные и к просмотру примеры работ'
         },
         {
             id: 1,
             imgSrc: '../static/ic-test.png',
-            scrLink: '/test',
-            title: 'Lorem',
-            description: 'lorem, lorem'
+            scrLink: '/js-tasks',
+            title: 'JS Tasks',
+            description: 'Задачки для тренировки javascript/typescript'
         },
                 {
             id: 2,
             imgSrc: '../static/ic-test.png',
-            scrLink: '/test',
-            title: 'Lorem',
-            description: 'lorem, lorem'
+            scrLink: '/front-end',
+            title: 'Front-end tips',
+            description: 'Шпаргалки по HTML, CSS, Vue, React'
         },
                 {
             id: 3,
             imgSrc: '../static/ic-test.png',
-            scrLink: '/about',
-            title: 'About',
-            description: 'lorem, lorem'
+            scrLink: '/exciting',
+            title: 'Exiting',
+            description: 'Что-то новое (или не очень) и интересное в WebDev'
         }
     ];
 let title = useTitle();
@@ -60,8 +60,8 @@ title.value = 'Главная';
     .sections-block {
         display: flex;
         align-items: center;
-        width: 180px;
-        height: 180px;
+        width: max-content;
+        height: max-content;
         justify-content: space-between;
         background-color: var(--block-bg);
         margin-bottom: 1em;
@@ -79,7 +79,7 @@ title.value = 'Главная';
             padding: 0.5em;
         }
         &__text {
-            padding: 0.5em;
+            padding: 1em;
         }
     }
 </style>
