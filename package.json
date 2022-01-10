@@ -1,5 +1,4 @@
 {
-  "name": "Nuxt3-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +8,7 @@
   },
   "devDependencies": {
     "nuxt3": "latest",
+    "prettier": "2.5.1",
     "sass": "^1.44.0",
     "sass-loader": "^12.4.0"
   },

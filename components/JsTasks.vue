@@ -2,9 +2,13 @@
   <h1>Tasks</h1>
 </template>
 
-<script setup>
-const title = useTitle();
-title.value = 'JS Tasks';
+<script lang="ts">
+export default defineComponent({
+  setup() {
+    const title = useTitle();
+    title.value = 'JS Tasks';
+  }
+})
 </script>
 
 <style scoped>

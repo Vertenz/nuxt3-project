@@ -7,10 +7,13 @@
         </section>
 </template>
 
-<script setup>
-import Test from "./UI/Test";
+<script lang="ts">
+import Test from "./UI/Test.vue";
 
-const aboutText = `Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+export default defineComponent({
+    components: {Test},
+    setup() {
+        const aboutText = `Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Suscipit alias facere, nulla perferendis dolorem, doloribus porro rerum eligendi 
             ad quibusdam odio praesentium nam cum obcaecati in. Quis pariatur excepturi ducimus.
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
@@ -23,8 +26,14 @@ const aboutText = `Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Suscipit alias facere, nulla perferendis dolorem, doloribus porro rerum eligendi 
             ad quibusdam odio praesentium nam cum obcaecati in. Quis pariatur excepturi ducimus+-`;
 
-let title = useTitle();
-title.value = 'About';
+        const title = useTitle();
+        title.value = 'About';
+
+        return {
+            aboutText
+        }
+    }
+})
 </script>
 
 <style lang="scss" scoped>

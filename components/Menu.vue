@@ -8,7 +8,7 @@
     <transition name='fade'>
       <nav class="menu-nav" v-if="showMenu" @click="changeShowMenu">
         <ul class="menu-nav__ul">
-          <NuxtLink v-for="el in menuEl" :key="el.tile" :to="el.path" class="menu-nav__li">{{ el.title }}</NuxtLink>
+          <NuxtLink v-for="el in menuEl" :key="el.title" :to="el.path" class="menu-nav__li">{{ el.title }}</NuxtLink>
         </ul>
         <button @click="changeTheme">changeTheme</button>
       </nav>

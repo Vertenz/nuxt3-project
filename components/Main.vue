@@ -4,10 +4,19 @@
     </div>
 </template>
 
-<script setup>
-const test = 'test';
-let title = useTitle();
-title.value = 'Главная';
+<script>
+export default defineComponent({
+    setup() {
+        const test = 'test';
+        const title = useTitle();
+        title.value = 'Главная';
+        
+        return {
+            test,
+            title
+        }
+    }
+})
 </script>
 
 <style lang="scss" scoped>

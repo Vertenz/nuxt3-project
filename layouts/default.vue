@@ -6,8 +6,9 @@
     </footer>
 </template>
 
-<script>
+<script lang="ts">
 export default {
+  name: 'default',
   data() {
         return {
             year: new Date().getFullYear()

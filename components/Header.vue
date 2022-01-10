@@ -13,38 +13,47 @@
     </div>
 </template>
 
-<script setup>
-async function setGradient(el, percent) {
-        let promise = new Promise((resolve) => {
-            setTimeout(() => {
-                percent++;
-                el.style.background = `linear-gradient(-70deg, var(--block-bg) ${percent}%, rgba(0, 0, 0, 0) 31%), url('/_nuxt/static/bg1.jpg')`;
-                el.style.backgroundSize = 'cover';
-                el.style.backgroundPosition = '50% 21%';
-                el.style.backgroundRepeat = 'no-repeat';
-                resolve(percent);
-            }, 35)
-        })
-       return promise;
-}
+<script lang="ts">
+export default defineComponent({
+    setup() {
+        async function setGradient(el: HTMLElement, percent: number | any) {
+            let promise = new Promise((resolve) => {
+                setTimeout(() => {
+                    percent++;
+                    el.style.background = `linear-gradient(-70deg, var(--block-bg) ${percent}%, rgba(0, 0, 0, 0) 31%), url('/_nuxt/static/bg1.jpg')`;
+                    el.style.backgroundSize = 'cover';
+                    el.style.backgroundPosition = '50% 21%';
+                    el.style.backgroundRepeat = 'no-repeat';
+                    resolve(percent);
+                }, 35)
+            })
+            return promise;
+        }
 
 
-async function reval() {
-    const header = document.getElementById('header');
-    let percent = -10;
-    while (percent < 30) {
-        percent = await setGradient(header, percent).then(result => result);
+        async function reval() {
+            const header: HTMLElement = document.getElementById('header')!;
+            let percent: number | any = -10;
+            while (percent < 30) {
+                percent = await setGradient(header, percent).then(result => result);
+            }
+        }
+
+        onMounted(reval);
+
+        function scrollNext() {
+            const nextEl = document.getElementsByTagName('section');
+            nextEl[0].scrollIntoView();
+        }
+
+        let title = useTitle();
+
+        return {
+            title,
+            scrollNext
+        }
     }
-}
-
-onMounted(reval);
-
-function scrollNext() {
-    const nextEl = document.getElementsByTagName('section');
-    nextEl[0].scrollIntoView();
-}
-
-let title = useTitle();
+})
 </script>
 
 <style lang="scss" scoped>
