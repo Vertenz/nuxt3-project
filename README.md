@@ -1,12 +1,23 @@
 # Nuxt 3 Minimal Starter
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+Lorem
+
+##Version description:
+``
+ver. 0.1.0:
+``
+```
+- Скелет приложения
+- Добавлен TS
+```
+
 
 ## Setup
 
 Make sure to install the dependencies
 
 ```bash
+npm i --save
 yarn install
 ```
 
@@ -15,6 +26,7 @@ yarn install
 Start the development server on http://localhost:3000
 
 ```bash
+npm run dev
 yarn dev
 ```
 
@@ -23,6 +35,7 @@ yarn dev
 Build the application for production:
 
 ```bash
+npm run build
 yarn build
 ```
 
