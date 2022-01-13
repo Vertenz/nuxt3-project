@@ -17,7 +17,7 @@ import ButtonsModel from '~/models/ButtonsModel'
 import { PropType } from 'vue'
 
 export default defineComponent({
-  name: 'Button',
+  name: 'BaseButton',
   props: {
     btnInfo: Object as PropType<ButtonsModel>
   },

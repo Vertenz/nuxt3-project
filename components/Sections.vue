@@ -1,19 +1,20 @@
 <template>
     <section class="sections" id="sections">
         <div class="sections-block" v-for="btnInfo in arrButtons" :key="btnInfo.id">
-            <Button :btnInfo='btnInfo' />
+            <BaseButton :btnInfo='btnInfo' />
         </div>
     </section>
 </template>
 
 <script lang="ts">
 import ButtonsModel from "~/models/ButtonsModel";
-import Button from "./UI/Button.vue";
+import BaseButton from "./UI/BaseButton.vue";
 
 export default defineComponent({
-  components: { Button },
+    name: 'Sections',
+    components: { BaseButton },
     setup() {
-        const arrButtons = ref<ButtonsModel[]>([{
+        const arrButtons = ref < ButtonsModel[] > ([{
                 id: 0,
                 imgSrc: '../static/ic-test.png',
                 scrLink: '/pets',
@@ -45,7 +46,7 @@ export default defineComponent({
         const title = useTitle();
         title.value = 'Главная';
 
-        return {arrButtons}
+        return { arrButtons }
     }
 })
 </script>
