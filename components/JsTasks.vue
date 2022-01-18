@@ -6,7 +6,7 @@
 export default defineComponent({
   setup() {
     const title = useTitle();
-    title.value = 'JS Tasks';
+    title.value = 'Задачки по JS';
   }
 })
 </script>

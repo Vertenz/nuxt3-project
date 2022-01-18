@@ -1,6 +1,6 @@
 <template>
   <div class="sections-block">
-    <NuxtLink :to="props?.btnInfo?.scrLink" class="sections-block__link">
+    <NuxtLink :to="props?.btnInfo?.srcLink" class="sections-block__link">
       <div class="sections-block__icon">
         <img :src="props?.btnInfo?.imgSrc" :alt="props?.btnInfo?.description">
       </div>
@@ -13,13 +13,13 @@
 </template>
 
 <script lang="ts">
-import ButtonsModel from '~/models/ButtonsModel'
+import MenuLElModel from '~/models/MenuLElModel'
 import { PropType } from 'vue'
 
 export default defineComponent({
   name: 'BaseButton',
   props: {
-    btnInfo: Object as PropType<ButtonsModel>
+    btnInfo: Object as PropType<MenuLElModel>
   },
   setup(props) {
     return {props}

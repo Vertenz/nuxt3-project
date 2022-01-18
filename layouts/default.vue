@@ -1,20 +1,60 @@
 <template>
+    <Menu />
     <Header />
-         <slot />
+    <div class="padding-wrap">
+        <slot />
+    </div>
     <footer class="footer">
-        {{ year }}
+        Wererate Copmuterkin {{ year }}
     </footer>
 </template>
 
 <script lang="ts">
-export default {
+export default defineComponent({
   name: 'default',
-  data() {
-        return {
-            year: new Date().getFullYear()
+    setup() {
+        onMounted(() => {
+            const headerEl: HTMLElement = document.getElementById('header') !;
+            let nOpacity: number = 1;
+            const headerHeight = headerEl.offsetHeight;
+            let scrollAnimation: boolean = false;
+            window.addEventListener('scroll', () => {
+                if (!scrollAnimation) {
+                    if (headerEl.getBoundingClientRect().top < -150) {
+                        scrollAnimation = true;
+                        hideHeader(headerEl, nOpacity, headerHeight);
+                    }
+                }
+            })
+        })
+
+        function hideHeader(el: HTMLElement, nOpacity: number, elHeight: number) {
+            let start = Date.now();
+
+            let timer = setInterval(function () {
+                let timePassed = Date.now() - start;
+                if (timePassed >= 4000) {
+                    clearInterval(timer); // закончить анимацию через 2 секунды
+                    return;
+                }
+                if (el.offsetHeight - (el.offsetHeight * 0.1) > 75) {
+                    el.style.height = el.offsetHeight - (el.offsetHeight * 0.1)  + 'px';
+                } else {
+                    const arrowBox: HTMLElement = document.getElementById('arrow-box')!;
+                    arrowBox.style.cssText = `top: 95px;
+                                              display: flex;
+                                              transform: rotate(180deg);`;
+                    return;
+                }
+            }, 20);
         }
-    },
-}
+
+        const year: Number = new Date().getFullYear()
+
+
+        return{ year }
+    }
+})
 </script>
 
 <style lang="scss">
@@ -34,7 +74,7 @@ export default {
     --main-text-color: #fff;
     --shadow: #000;
     --padding: 3vw;
-    --attention-color: rgb(250, 124, 48);
+    --footer-color: rgb(250, 124, 48);
 }
 * {
     margin: 0;
@@ -46,7 +86,7 @@ body {
     background-color: var(--main-bg-color);
     scroll-behavior: smooth;
 }
-a {
+a { 
     text-decoration: none;
 }
 
@@ -105,5 +145,9 @@ ul, li {
   background: none;
   position: absolute;
   transition: all .5s ease-Out;
+}
+
+.padding-wrap {
+    padding: 0 15px;
 }
 </style>

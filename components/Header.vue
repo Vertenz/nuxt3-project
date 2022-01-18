@@ -1,16 +1,16 @@
 <template>
     <header class="header" id="header">
-        <Menu />
         <div class="header__text">
-            <h1>Lorem, ipsum.</h1>
-            <h2>{{ title }}</h2>
+            <h1 class="header__text_h">Привет! Это </h1>
+            <p>ты сейчас в разделе:</p>
+            <h2 class="header__text_h2">{{ title }}</h2>
+        </div>
+        <div class="line"></div>
+        <div class="arrow-box" id="arrow-box" @click="openHeader">
+            <div class="arrow-box__el arrow-box__el_left"></div>
+            <div class="arrow-box__el arrow-box__el_right"></div>
         </div>
     </header>
-    <div class="line"></div>
-    <div class="arrow-box" @click="scrollNext">
-        <div class="arrow-box__el arrow-box__el_left"></div>
-        <div class="arrow-box__el arrow-box__el_right"></div>
-    </div>
 </template>
 
 <script lang="ts">
@@ -41,16 +41,15 @@ export default defineComponent({
 
         onMounted(reval);
 
-        function scrollNext() {
-            const nextEl = document.getElementsByTagName('section');
-            nextEl[0].scrollIntoView();
+        function openHeader() {
+            //TODO header height = 100vh
         }
 
         let title = useTitle();
 
         return {
             title,
-            scrollNext
+            openHeader
         }
     }
 })
@@ -83,7 +82,7 @@ export default defineComponent({
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 1em;
+    padding: 0 1em;
     color: #fff;
     margin-bottom: 20px;
     &__text {
@@ -91,6 +90,16 @@ export default defineComponent({
         flex-direction: column;
         justify-content: space-around;
         animation: 3s infinite alternate setShadow;
+        &_h {
+            font-size: 1.7rem;
+        }
+        &_h2 {
+            font-size: 1.4rem;
+            transition: 0.5s;
+            &::first-letter {
+                color: var(--footer-color);
+            }
+        }
     }
 }
 

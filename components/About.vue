@@ -27,7 +27,7 @@ export default defineComponent({
             ad quibusdam odio praesentium nam cum obcaecati in. Quis pariatur excepturi ducimus+-`;
 
         const title = useTitle();
-        title.value = 'About';
+        title.value = 'О проекте';
 
         return {
             aboutText

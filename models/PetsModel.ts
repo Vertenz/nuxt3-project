@@ -5,6 +5,7 @@ interface PetsModel {
     link: string,
     page: string | boolean,
     description: string,
+    techs: string
 }
 
 export default PetsModel;
