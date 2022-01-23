@@ -13,41 +13,47 @@
 export default defineComponent({
   name: 'default',
     setup() {
-        onMounted(() => {
-            const headerEl: HTMLElement = document.getElementById('header') !;
-            let nOpacity: number = 1;
-            const headerHeight = headerEl.offsetHeight;
-            let scrollAnimation: boolean = false;
-            window.addEventListener('scroll', () => {
-                if (!scrollAnimation) {
-                    if (headerEl.getBoundingClientRect().top < -150) {
-                        scrollAnimation = true;
-                        hideHeader(headerEl, nOpacity, headerHeight);
-                    }
-                }
-            })
-        })
+        // onMounted(() => {
+        //     const headerEl: HTMLElement = document.getElementById('header') !;
+        //     let scrollAnimation: boolean = false;
+        //     window.addEventListener('scroll', () => {
+        //         if (!scrollAnimation) {
+        //             if (headerEl.getBoundingClientRect().top < -150) {
+        //                 scrollAnimation = true;
+        //                 hideHeader();
+        //             }
+        //         }
+        //     })
+        // })
 
-        function hideHeader(el: HTMLElement, nOpacity: number, elHeight: number) {
-            let start = Date.now();
-
-            let timer = setInterval(function () {
-                let timePassed = Date.now() - start;
-                if (timePassed >= 4000) {
-                    clearInterval(timer); // закончить анимацию через 2 секунды
-                    return;
-                }
-                if (el.offsetHeight - (el.offsetHeight * 0.1) > 75) {
-                    el.style.height = el.offsetHeight - (el.offsetHeight * 0.1)  + 'px';
-                } else {
-                    const arrowBox: HTMLElement = document.getElementById('arrow-box')!;
-                    arrowBox.style.cssText = `top: 95px;
-                                              display: flex;
-                                              transform: rotate(180deg);`;
-                    return;
-                }
-            }, 20);
-        }
+        // function hideHeader(el: HTMLElement) {
+        //     let start = Date.now();
+        //     console.log('close')
+        //     let timer = setInterval(function () {
+        //         let timePassed = Date.now() - start;
+        //         if (timePassed >= 4000) {
+        //             clearInterval(timer);
+        //             return;
+        //         }
+        //         if (el.offsetHeight - (el.offsetHeight * 0.1) > 75) {
+        //             el.style.height = el.offsetHeight - (el.offsetHeight * 0.1)  + 'px';
+        //         } else {
+        //             const arrowBox: HTMLElement = document.getElementById('arrow-box')!;
+        //             arrowBox.style.cssText = `top: 95px;
+        //                                       display: flex;
+        //                                       transform: rotate(180deg);`;
+        //             return;
+        //         }
+        //     }, 20);
+        // }
+        // const hideHeader = () => {
+        //     const header: HTMLElement = document.getElementById('header') !;
+        //     header.classList.add('small-height');
+        //     const arrowBox: HTMLElement = document.getElementById('arrow-box') !;
+        //     arrowBox.style.cssText = `top: 95px;
+        //                                       display: flex;
+        //                                       transform: rotate(180deg);`;
+        // }
 
         const year: Number = new Date().getFullYear()
 
@@ -149,5 +155,20 @@ ul, li {
 
 .padding-wrap {
     padding: 0 15px;
+    z-index: -1;
+}
+
+.full-height {
+    height: 100vh !important;
+}
+
+.small-height {
+    height: 100px !important;
+}
+
+.top-position {
+    top: 101px;
+    display: flex;
+    transform: rotate(180deg) !important;
 }
 </style>

@@ -41,9 +41,53 @@ export default defineComponent({
 
         onMounted(reval);
 
-        function openHeader() {
-            //TODO header height = 100vh
-        }
+        // const openHeader = () => {
+        //     const header: HTMLElement = document.getElementById('header') !;
+        //     let newHeight: number = header.offsetHeight + (header.offsetHeight * 0.1);
+        //     let timer = setInterval(function () {
+        //         newHeight = header.offsetHeight + (header.offsetHeight * 0.1);
+        //         console.log(newHeight)
+        //         if (newHeight <= document.documentElement.clientHeight) {
+        //             header.style.height = newHeight + 'px';
+        //         } else {
+        //             const arrowBox: HTMLElement = document.getElementById('arrow-box') !;
+        //             arrowBox.style.cssText = `bottom: 2em;
+        //                                             display: flex;`;
+        //             clearInterval(timer);
+        //             return;
+        //         }
+        //     }, 30);
+        // }
+
+    //    const  openHeader = () => {
+    //         const header: HTMLElement = document.getElementById('header') !;
+    //         let newHeight: number = header.offsetHeight + (header.offsetHeight * 0.1);
+    //         try {
+    //             const timer = setInterval(async function () {
+    //             newHeight = header.offsetHeight + (header.offsetHeight * 0.1);
+    //             if (newHeight <= document.documentElement.clientHeight) {
+    //                 header.style.height = newHeight + 'px';
+    //                 console.log(header.style.height)
+    //             } else {
+    //                 const arrowBox: HTMLElement = document.getElementById('arrow-box') !;
+    //                 arrowBox.style.cssText = `bottom: 2em;
+    //                                                 display: flex;`;
+    //                 clearInterval(timer);
+    //                 return;
+    //             }
+    //             }, 20)
+    //         } catch (error) {
+    //             console.warn('error during polling', error.response);
+    //             clearInterval(timer);
+    //         }
+    //         }
+
+    const openHeader = () => {
+        const header: HTMLElement = document.getElementById('header') !;
+        header.classList.toggle('small-height');
+        const arrowBox: HTMLElement = document.getElementById('arrow-box') !;
+        arrowBox.classList.toggle('top-position');
+    }
 
         let title = useTitle();
 
@@ -82,9 +126,10 @@ export default defineComponent({
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 1em;
+    padding: 1em 1em 2em 0;
     color: #fff;
     margin-bottom: 20px;
+    transition: 1s;
     &__text {
         display: flex;
         flex-direction: column;
@@ -106,10 +151,12 @@ export default defineComponent({
 .arrow-box {
     position: absolute;
     bottom: 2em;
+    padding: 20px;
     left: 50%;
     min-width: max-content;
     max-height: max-content;
     z-index: 3;
+    transition: 0.8s;
     cursor: pointer;
     &__el {
         width: 4px;
@@ -120,12 +167,12 @@ export default defineComponent({
         &_right {
             transform: rotate(45deg);
             position: absolute;
-            left: 4.5px;
+            left: 10px;
         }
         &_left {
             transform: rotate(-45deg);
             position: absolute;
-            left: -4.5px;
+            left: 19px;
         }
     }
 }

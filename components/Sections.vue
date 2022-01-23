@@ -30,5 +30,6 @@ export default defineComponent({
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
+        margin-top: 2em;
     }
 </style>

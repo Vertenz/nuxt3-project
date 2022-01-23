@@ -52,5 +52,10 @@ export default defineComponent({
         &__text {
             padding: 1em;
         }
+        @media (max-width: 480px) {
+          &{
+            width: min-content;
+          }
+        }
     }
 </style>

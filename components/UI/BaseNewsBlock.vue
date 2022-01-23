@@ -1,14 +1,14 @@
 <template>
     <div class="news-block">
         <header class="news-header">
-            <h4 class="news-header__h"></h4>
-            <p class="news-header__type"></p>
+            <h4 class="news-header__h">{{ props?.news?.title }}</h4>
+            <p class="news-header__type">{{ props?.news?.type }}</p>
         </header>
         <div class="text-block">
-            <p class="text-block__description"></p>
+            <p class="text-block__description">{{ props?.news?.description }}</p>
         </div>
         <footer class="news-footer">
-            <a href="" class="news-footer__li"></a>
+            <a :href="props?.news?.link" class="news-footer__li">Ссылка на материал</a>
         </footer>
     </div>
 </template>
