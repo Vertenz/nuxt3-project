@@ -9,31 +9,49 @@
         <details class="news-up__details">
           <summary class="news-up__summary"></summary>
           <div class="filter">
-            <form class="filter-check" id="filter-form" v-on:submit.prevent="test">
+            <form class="filter-check" id="filter-form" v-on:submit.prevent>
               <label for="news-search">Поиск по названию</label>
-              <input v-model="searchText" @change="test" type="search" name="news-search" id="news-search"
-                class="filter__search" />
-              <label for="article">статья</label>
-              <input v-model="searchType" type="radio" name="article" id="article" value="статья" />
-              <label for="news">новость</label>
-              <input v-model="searchType" type="radio" name="news" id="news" value="новость" />
-              <label for="all">любой и все все</label>
-              <input v-model="searchType" type="radio" name="all" id="all" value="all">
-              <button type="submit">Ok</button>
+              <input v-model="searchText" @change="startSearch" type="search" name="news-search" id="news-search"
+                class="filter-check__search" />
+              <label for="article">
+                статья
+                <input v-model="searchType" type="radio" name="article" id="article" value="статья" />
+              </label>
+              <label for="news">
+                новость
+                <input v-model="searchType" type="radio" name="news" id="news" value="новость" />
+              </label>
+              <label for="all">
+                любой и все все
+                <input v-model="searchType" type="radio" name="all" id="all" value="all">
+              </label>
             </form>
           </div>
         </details>
       </div>
-      <li v-for="el in arrNews" :key="el.id"> {{ el.title }} </li>
+      <transition name="slide-fade">
+        <div class="news-main" v-if="findNews[0]">
+          <div v-for="findEl in findNews" :key="findEl.id" class="news-block__el">
+            <BaseNewsBlock :news="findEl" />
+          </div>
+        </div>
+        <div class="news-main" v-else>
+          <div v-for="news in arrNews" :key="news.id" class="news-block__el">
+            <BaseNewsBlock :news="news" />
+          </div>
+        </div>
+      </transition>
     </section>
   </div>
 </template>
 
 <script lang="ts">
 import { useNews } from "~~/composables/useNews";
+import BaseNewsBlock from "~/components/UI/BaseNewsBlock.vue";
 
 export default defineComponent({
   name: 'NewsSection',
+  components: { BaseNewsBlock },
   setup() {
 
     const title = useTitle();
@@ -44,16 +62,32 @@ export default defineComponent({
     let searchText = ref('');
     let searchType = ref('');
 
-    const test = () => {
-      console.log('tets form', {text: searchText.value, param: searchType.value})
+    let findNews = ref([]);
+
+    function startSearch() {
+      if (searchText.value.length > 2) {
+        findNews.value = [];
+        searchText.value = searchText.value.toLowerCase();
+        arrNews.value.map((item) => {
+          item.title.toLowerCase().includes(searchText.value) ? findNews.value.push(item) : false;
+        })
+        return findNews;
+      }else {
+        findNews.value = [];
+        return findNews;
+      }
     }
 
-    return{arrNews, test, searchText, searchType};
+    return{arrNews, findNews, searchText, searchType, startSearch};
   }
 })
 </script>
 
 <style lang="scss" scoped>
+.news-section {
+  min-height: 100vh;
+}
+
 .news-up {
   padding: 1em 0;
   display: flex;
@@ -98,9 +132,34 @@ export default defineComponent({
     z-index: 2;
     background-color: rgba(1, 2, 3, 0.5);
     width: max-content;
-  &__search {
+}
+
+.filter-check {
+    display: flex;
+    flex-direction: column;
+    &__search {
     color: black;
     padding: 0 0.5em;
   }
+}
+
+.news-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.slide-fade-enter-active {
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-leave-active {
+  transition: all .3s ease-out;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>
