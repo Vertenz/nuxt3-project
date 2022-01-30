@@ -13,18 +13,6 @@
               <label for="news-search">Поиск по названию</label>
               <input v-model="searchText" @change="startSearch" type="search" name="news-search" id="news-search"
                 class="filter-check__search" />
-              <label for="article">
-                статья
-                <input v-model="searchType" type="radio" name="article" id="article" value="статья" />
-              </label>
-              <label for="news">
-                новость
-                <input v-model="searchType" type="radio" name="news" id="news" value="новость" />
-              </label>
-              <label for="all">
-                любой и все все
-                <input v-model="searchType" type="radio" name="all" id="all" value="all">
-              </label>
             </form>
           </div>
         </details>
@@ -69,7 +57,13 @@ export default defineComponent({
         findNews.value = [];
         searchText.value = searchText.value.toLowerCase();
         arrNews.value.map((item) => {
-          item.title.toLowerCase().includes(searchText.value) ? findNews.value.push(item) : false;
+          for (let key in item) {
+            let el: string = item[key].toString().toLowerCase();
+            if (el.includes(searchText.value)) {
+              return findNews.value.push(item);
+            }
+          }
+
         })
         return findNews;
       }else {
