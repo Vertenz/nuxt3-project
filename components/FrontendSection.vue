@@ -1,22 +1,23 @@
 <template>
   <section>
-    <h1>Front-end</h1>
-    <div class="test">
-      <form>
-        <input type="date" name="1" id="1">
-        <input type="email" name="2" id="2">
-        <input type="text" name="3" id="3">
-      </form>
+    <div v-for="el in arrTips" :key="el.id">
+      <h1>{{ el.title }}</h1>
     </div>
   </section>
 </template>
 
 <script lang="ts">
+import { useTips } from '~/composables/useTips'
+
 export default defineComponent({
   name: 'FrontendSection',
   setup() {
     const title = useTitle();
     title.value = 'Заметки фронтендера';
+
+    const arrTips = useTips();
+
+    return {arrTips}
   }
 })
 </script>

@@ -43,5 +43,13 @@ export const useNews = () =>
                 technology: 'Nuxt',
                 description: 'В статье говоритcя о личном опыте использования Nuxt3',
                 link: 'https://itnext.io/nuxt-3-first-steps-c23d142405c4'
+            },
+            {
+                id: 6,
+                title: 'Варианты отображения SVG',
+                type: 'Статья',
+                technology: 'Front',
+                description: 'Размышления на тему каким способом лучше всего отображать SVG',
+                link: 'https://cloudfour.com/thinks/svg-icon-stress-test/'
             }
         ])
