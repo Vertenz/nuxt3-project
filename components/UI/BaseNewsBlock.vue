@@ -1,6 +1,6 @@
 <template>
-    <div>
-            <a :href="props?.news?.link" target="_blank" rel="noopener noreferrer" class="news-block">
+    <div class="news-block">
+            <a :href="props?.news?.link" target="_blank" rel="noopener noreferrer">
                 <header class="news-header">
                     <h4 class="news-header__h">{{ props?.news?.title }}</h4>
                     <p class="news-header__type">{{ props?.news?.type }}</p>
