@@ -8,7 +8,8 @@
     <transition name='fade'>
       <nav class="menu-nav" v-if="showMenu" @click="changeShowMenu">
         <ul class="menu-nav__ul">
-          <NuxtLink v-for="el in menuEl" :key="el.title" :to="el.path" class="menu-nav__li">{{ el.title }}</NuxtLink>
+          <NuxtLink to="/" class="menu-nav__li">Домой</NuxtLink>
+          <NuxtLink v-for="el in menuEl" :key="el.id" :to="el.srcLink" class="menu-nav__li">{{ el.title }}</NuxtLink>
         </ul>
         <button @click="changeTheme">changeTheme</button>
       </nav>
@@ -16,54 +17,28 @@
   </menu>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      showMenu: false,
-      menuEl: [
-        {
-          title: 'Главная',
-          path: '/'
-        },
-        {
-          title: 'Pets project',
-          path: '/pets'
-        },
-        {
-          title: 'Front-end tips',
-          path: '/front-end'
-        },
-        {
-          title: 'JS tasks',
-          path: '/js-tasks'
-        },
-        {
-          title: 'News / Some exciting',
-          path: '/exciting'
-        },
-        {
-          title: 'About',
-          path: '/about'
-        }
-      ]
-    }
-  },
-  methods: {
-    changeShowMenu: function () {
-      this.showMenu = !this.showMenu;
-      if (this.showMenu === true) {
+<script lang="ts">
+export default defineComponent({
+  name: 'Menu',
+  setup() {
+    let showMenu = ref(false);
+    const menuEl = useMenuEL();
+
+    function changeShowMenu() {
+      showMenu.value = !showMenu.value;
+      if (showMenu.value === true) {
         document.body.style.overflow = 'hidden';
       } else {
         document.body.style.overflow = 'auto';
       }
-    },
-    changeTheme: function () {
-      const root = document.querySelector(':root');
+    };
+
+    function  changeTheme() {
+      const root: HTMLElement = document.querySelector(':root')!;
       let theme = useTheme();
       theme.value === 'dark' ? theme.value = 'light' : theme.value = 'dark';
       if (theme.value === 'light') {
-        const header = document.getElementById('header');
+        const header: HTMLElement = document.getElementById('header')!;
         header.style.background = 'linear-gradient(-70deg, var(--block-bg) 29%, rgba(0, 0, 0, 0) 31%), url("/_nuxt/static/bg2.jpg")';
         header.style.backgroundSize = 'cover';
         header.style.backgroundPosition = '50% 21%';
@@ -72,7 +47,7 @@ export default {
         root.style.setProperty('--main-text-color', '#000');
         root.style.setProperty('--shadow', '#fff');
       } else {
-        const header = document.getElementById('header');
+        const header: HTMLElement = document.getElementById('header')!;
         header.style.background = 'linear-gradient(-70deg, var(--block-bg) 29%, rgba(0, 0, 0, 0) 31%), url("/_nuxt/static/bg1.jpg")';
         header.style.backgroundSize = 'cover';
         header.style.backgroundPosition = '50% 21%';
@@ -82,9 +57,16 @@ export default {
         root.style.setProperty('--shadow', '#000');
       }
 
+    };
+
+    return {
+      showMenu,
+      menuEl,
+      changeShowMenu,
+      changeTheme
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -121,7 +103,7 @@ export default {
     transition: 1s;
 
     &:hover {
-      color: var(--attention-color);
+      color: var(--block-attention-bg);
     }
   }
 }
