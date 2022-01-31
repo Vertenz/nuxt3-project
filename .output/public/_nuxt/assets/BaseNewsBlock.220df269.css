@@ -1,0 +1,1 @@
+.news-block{width:100%;height:100%;padding:2em;border:1px solid black;display:flex;flex-direction:column;justify-content:center;box-shadow:0 0 1px;background-color:var(--block-bg);transition:.3s;font-size:1.2rem}.news-block:hover{background-color:var(--block-attention-bg);transform:translate(5px,-5px)}.text-block__img{float:left;width:5em;padding:0 10px 10px 0}
