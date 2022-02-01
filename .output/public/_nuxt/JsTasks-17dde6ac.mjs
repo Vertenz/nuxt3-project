@@ -1,0 +1,1 @@
+import{u as t}from"./states-e0cfe737.mjs";import{_ as s,d as o,c as n,o as u}from"./entry-bdb9b50d.mjs";const a=o({setup(){const e=t();e.value="\u0417\u0430\u0434\u0430\u0447\u043A\u0438 \u043F\u043E JS"}});function r(e,c,_,p,m,f){return u(),n("h1",null,"Tasks")}var i=s(a,[["render",r]]);export{i as default};

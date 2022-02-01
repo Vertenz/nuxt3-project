@@ -1,0 +1,1 @@
+import t from"./PetsSection-1f0543dd.mjs";import{_ as o,i as c,o as n}from"./entry-bdb9b50d.mjs";import"./states-e0cfe737.mjs";import"./BasePetBlock-18a36f55.mjs";const s={};function r(_,m){const e=t;return n(),c(e)}var d=o(s,[["render",r]]);export{d as default};
