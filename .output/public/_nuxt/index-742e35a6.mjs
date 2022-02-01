@@ -1,0 +1,1 @@
+import o from"./NewsSection-59197dbe.mjs";import{_ as c,i as t,o as s}from"./entry-c82175cc.mjs";import"./states-6b668fc1.mjs";import"./BaseNewsBlock-f698f8ba.mjs";const n={};function r(_,m){const e=o;return s(),t(e)}var d=c(n,[["render",r]]);export{d as default};

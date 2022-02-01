@@ -6,7 +6,7 @@
                     <p class="news-header__type">{{ props?.news?.type }}</p>
                 </header>
                 <div class="text-block">
-                    <img :src="'../static/news/' + props?.news?.technology + '.svg'"
+                    <img :src="`/news/${props?.news?.technology}.svg`"
                         :alt="`статья о ${props?.news?.technology}`" class="text-block__img">
                     <p class="text-block__description">{{ props?.news?.description }}</p>
                 </div>
@@ -27,7 +27,10 @@
             news: Object as PropType<NewsModel>
         },
         setup(props) {
-            return{props}
+            
+            return {
+                props
+            }
         }
     })
 </script>

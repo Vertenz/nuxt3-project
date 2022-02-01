@@ -20,7 +20,7 @@ export default defineComponent({
             let promise = new Promise((resolve) => {
                 setTimeout(() => {
                     percent++;
-                    el.style.background = `linear-gradient(-70deg, var(--block-bg) ${percent}%, rgba(0, 0, 0, 0) 31%), url('/_nuxt/static/bg1.jpg')`;
+                    el.style.background = `linear-gradient(-70deg, var(--block-bg) ${percent}%, rgba(0, 0, 0, 0) 31%), url('/bg1.jpg')`;
                     el.style.backgroundSize = 'cover';
                     el.style.backgroundPosition = '50% 21%';
                     el.style.backgroundRepeat = 'no-repeat';
