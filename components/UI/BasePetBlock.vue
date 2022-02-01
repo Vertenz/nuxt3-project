@@ -12,7 +12,7 @@
             <p class="text-block__tech">{{ props?.pet?.techs }}</p>
             <details v-if="props?.pet?.page" class="text-block__details">
                 <summary class="text-block__summary">Here a screenshot</summary>
-                <a :href="imgSrc + props?.pet?.id + '.jpg'" target="_blank"><img :src="imgSrc + props?.pet?.id + '.jpg'" alt="screenshot" class="text-block__img"></a>
+                <a :href="`/pets/${props?.pet?.id}.jpg`" target="_blank"><img :src="`/pets/${props?.pet?.id}.jpg`" alt="screenshot" class="text-block__img"></a>
             </details>
         </div>
         <footer class="pet-footer">
@@ -32,10 +32,8 @@
             pet: Object as PropType < PetsModel >
         },
         setup(props) {
-            const imgSrc = '/static/pets/';
             return {
                 props,
-                imgSrc
             }
         }
     })

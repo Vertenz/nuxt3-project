@@ -1,0 +1,1 @@
+import c from"./FrontendSection-fbb0aafc.mjs";import{_ as e,i as t,o as n}from"./entry-c82175cc.mjs";import"./states-6b668fc1.mjs";import"./BaseTipsBlock-5aec2431.mjs";const r={};function s(_,a){const o=c;return n(),t(o)}var d=e(r,[["render",s]]);export{d as default};
