@@ -1,6 +1,6 @@
 # Nuxt 3 Minimal Starter
 
-Lorem
+https://youthful-joliot-2fec61.netlify.app/
 
 ##Version description:
 ``
