@@ -1,26 +1,23 @@
 <template>
   <section>
     <div class="tips-main">
-      <div v-for="tips in arrTips" :key="tips.id" class="news-block__el">
-        <BaseTipsBlock :tips="tips" />
+      <div v-for="tip in arrTips" :key="tip.id" class="news-block__el">
+        <BaseTipsBlock :tip="tip" />
       </div>
     </div>
   </section>
 </template>
 
 <script lang="ts">
-import { useTips } from '~/composables/useTips'
 import BaseTipsBlock from "~/components/UI/BaseTipsBlock.vue"
 
 export default defineComponent({
-  name: 'FrontendSection',
-  components: {BaseTipsBlock},
+  components: { BaseTipsBlock },
   setup() {
     const title = useTitle();
     title.value = 'Заметки фронтендера';
 
     const arrTips = useTips();
-
 
     return {arrTips}
   }

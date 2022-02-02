@@ -1,8 +1,10 @@
 <template>
   <div class="transition-fix">
+
     <head>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     </head>
+
     <section class="news-section">
       <div class="news-up">
         <h1>Новости / Статьи / Полезные ресурсы</h1>
@@ -34,23 +36,21 @@
 </template>
 
 <script lang="ts">
-import { useNews } from "~~/composables/useNews";
 import BaseNewsBlock from "~/components/UI/BaseNewsBlock.vue";
 
 export default defineComponent({
-  name: 'NewsSection',
   components: { BaseNewsBlock },
   setup() {
 
     const title = useTitle();
-    title.value = 'Что-то интересненькое';
+    title.value = 'Что-то интересное';
     
     const arrNews = useNews();
 
     let searchText = ref('');
-    let searchType = ref('');
 
     let findNews = ref([]);
+
 
     function startSearch() {
       if (searchText.value.length > 2) {
@@ -72,7 +72,7 @@ export default defineComponent({
       }
     }
 
-    return{arrNews, findNews, searchText, searchType, startSearch};
+    return{arrNews, findNews, searchText, startSearch};
   }
 })
 </script>
@@ -141,6 +141,9 @@ export default defineComponent({
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .slide-fade-enter-active {

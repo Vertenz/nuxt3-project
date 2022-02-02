@@ -1,24 +1,31 @@
 <template>
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-    <div class="pet-block">
-        <header class="pet-header">
-            <h3 class="pet-header__name">{{ props?.pet?.name }}</h3>
-            <h4 class="pet-header__year">year {{ props?.pet?.year }} </h4>
-        </header>
-        <div class="text-block">
-            <p class="text-block__text">{{ props?.pet?.description }}</p>
-            <p class="text-block__tech">{{ props?.pet?.techs }}</p>
-            <details v-if="props?.pet?.page" class="text-block__details">
-                <summary class="text-block__summary">Here a screenshot</summary>
-                <a :href="`/pets/${props?.pet?.id}.jpg`" target="_blank"><img :src="`/pets/${props?.pet?.id}.jpg`" alt="screenshot" class="text-block__img"></a>
-            </details>
+    <div>
+
+        <head>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        </head>
+        
+        <div class="pet-block">
+            <header class="pet-header">
+                <h3 class="pet-header__name">{{ props?.pet?.name }}</h3>
+                <h4 class="pet-header__year">year {{ props?.pet?.year }} </h4>
+            </header>
+            <div class="text-block">
+                <p class="text-block__text">{{ props?.pet?.description }}</p>
+                <p class="text-block__tech">{{ props?.pet?.techs }}</p>
+                <details v-if="props?.pet?.page" class="text-block__details">
+                    <summary class="text-block__summary">Here a screenshot</summary>
+                    <a :href="`/pets/${props?.pet?.id}.jpg`" target="_blank"><img :src="`/pets/${props?.pet?.id}.jpg`"
+                            alt="screenshot" class="text-block__img"></a>
+                </details>
+            </div>
+            <footer class="pet-footer">
+                <a class="pet-footer__link pet-footer__link_git" :href="props?.pet?.link" title="github"
+                    target="_blank"></a>
+                <a v-if="props?.pet?.page" class="pet-footer__link pet-footer__link_page" :href="props?.pet?.page"
+                    title="website" target="_blank"></a>
+            </footer>
         </div>
-        <footer class="pet-footer">
-            <a class="pet-footer__link pet-footer__link_git" :href="props?.pet?.link" title="github" target="_blank"></a>
-            <a v-if="props?.pet?.page" class="pet-footer__link pet-footer__link_page" :href="props?.pet?.page" title="website" target="_blank"></a>
-        </footer>
     </div>
 </template>
 <script lang="ts">
@@ -27,11 +34,11 @@
 
 
     export default defineComponent({
-        name: 'BasePetBlock',
         props: {
             pet: Object as PropType < PetsModel >
         },
         setup(props) {
+
             return {
                 props,
             }

@@ -1,10 +1,8 @@
 import { useState } from '#app'
 import PetsModel from '~~/models/PetsModel'
 
-export const usePets = () => 
- useState<PetsModel[]>('pets', () => 
-    [
-        {
+export const usePets = () =>
+    useState < PetsModel[] > ('pets', () => [{
             id: 1,
             name: 'Test project',
             year: 2021,
@@ -49,5 +47,4 @@ export const usePets = () =>
             description: 'this is my react training project. I`m getting a little bored with all usual staff like to-do list, input form, ect. That is exactly why I created This :) You can use the Adventure mode or Text version to see other my project. I used here React, functional components, react-router-dom, lazy, useEffect, useRef, useState',
             techs: 'React'
         },
-    ]
-  )
+    ])

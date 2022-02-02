@@ -1,7 +1,7 @@
 <template>
     <header class="header" id="header">
         <div class="header__text">
-            <h1 class="header__text_h">Привет! Это </h1>
+            <h1 class="header__text_h">Привет!</h1>
             <p>ты сейчас в разделе:</p>
             <h2 class="header__text_h2">{{ title }}</h2>
         </div>

@@ -2,16 +2,15 @@ import { useState } from "#app";
 import TipsModel from "~~/models/TipsModel";
 
 export const useTips = () =>
-    useState < TipsModel[] > ('tips', () => [{
-        id: 1,
-        title: 'Ошибка Nuxt. Не отображает страницу после второго перехода',
-        description: `Первый переход на страницу отображается корректно, но после попытки перейти на другую выдает ошибку
-            Extraneous non-props attributes (name) were passed to component but could not be automatically inherited because 
-            component renders fragment or text root nodes. Так же при открытии компонента есть предупреждение Component inside <Transition> renders non-element 
+  useState < TipsModel[] > ('tips', () => [{
+    id: 1,
+    title: 'Ошибка Nuxt. Не отображает страницу после второго перехода',
+    description: `Первый переход на страницу отображается корректно, но после попытки перейти на другую выдает ошибку. 
+            Так же при открытии компонента есть предупреждение Component inside <Transition> renders non-element 
             root node that cannot be animated. Ошибка состоит в том, что хоть vue3 и nuxt3 могут работать без единого коревого элемента в <template>, анимация через Transition
             или выставленная автоматически анимация для страниц не может корректно работать, если у вас есть несколько рут элементов. 
             В данном примере необходимо объединить <head> и <section> : `,
-        code: `\n //не правильный вариант\n
+    code: `\n //не правильный вариант\n
           <template>
               <head>
                 <link rel="stylesheet" 
@@ -87,5 +86,5 @@ export const useTips = () =>
               </section>
             </div>
           </template>`,
-      tag: 'Nuxt'
-    }])
+    tag: 'Nuxt'
+  }])

@@ -17,7 +17,6 @@ import MenuLElModel from '~/models/MenuLElModel'
 import { PropType } from 'vue'
 
 export default defineComponent({
-  name: 'BaseButton',
   props: {
     btnInfo: Object as PropType<MenuLElModel>
   },
@@ -52,7 +51,7 @@ export default defineComponent({
         &__text {
             padding: 1em;
         }
-        @media (max-width: 480px) {
+        @media (max-width: 570px) {
           &{
             width: min-content;
           }

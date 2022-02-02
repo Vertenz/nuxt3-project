@@ -11,7 +11,7 @@
           <NuxtLink to="/" class="menu-nav__li">Домой</NuxtLink>
           <NuxtLink v-for="el in menuEl" :key="el.id" :to="el.srcLink" class="menu-nav__li">{{ el.title }}</NuxtLink>
         </ul>
-        <button @click="changeTheme">changeTheme</button>
+        <!-- <button @click="changeTheme">changeTheme</button> -->
       </nav>
     </transition>
   </menu>
@@ -19,7 +19,6 @@
 
 <script lang="ts">
 export default defineComponent({
-  name: 'Menu',
   setup() {
     let showMenu = ref(false);
     const menuEl = useMenuEL();
@@ -33,37 +32,36 @@ export default defineComponent({
       }
     };
 
-    function  changeTheme() {
-      const root: HTMLElement = document.querySelector(':root')!;
-      let theme = useTheme();
-      theme.value === 'dark' ? theme.value = 'light' : theme.value = 'dark';
-      if (theme.value === 'light') {
-        const header: HTMLElement = document.getElementById('header')!;
-        header.style.background = 'linear-gradient(-70deg, var(--block-bg) 29%, rgba(0, 0, 0, 0) 31%), url("/_nuxt/static/bg2.jpg")';
-        header.style.backgroundSize = 'cover';
-        header.style.backgroundPosition = '50% 21%';
-        header.style.backgroundRepeat = 'no-repeat';
-        root.style.setProperty('--main-bg-color', '#fff');
-        root.style.setProperty('--main-text-color', '#000');
-        root.style.setProperty('--shadow', '#fff');
-      } else {
-        const header: HTMLElement = document.getElementById('header')!;
-        header.style.background = 'linear-gradient(-70deg, var(--block-bg) 29%, rgba(0, 0, 0, 0) 31%), url("/_nuxt/static/bg1.jpg")';
-        header.style.backgroundSize = 'cover';
-        header.style.backgroundPosition = '50% 21%';
-        header.style.backgroundRepeat = 'no-repeat';
-        root.style.setProperty('--main-bg-color', '#341c3c');
-        root.style.setProperty('--main-text-color', '#fff');
-        root.style.setProperty('--shadow', '#000');
-      }
+    // function  changeTheme() {
+    //   const root: HTMLElement = document.querySelector(':root')!;
+    //   let theme = useTheme();
+    //   theme.value === 'dark' ? theme.value = 'light' : theme.value = 'dark';
+    //   if (theme.value === 'light') {
+    //     const header: HTMLElement = document.getElementById('header')!;
+    //     header.style.background = 'linear-gradient(-70deg, var(--block-bg) 29%, rgba(0, 0, 0, 0) 31%), url("/_nuxt/static/bg2.jpg")';
+    //     header.style.backgroundSize = 'cover';
+    //     header.style.backgroundPosition = '50% 21%';
+    //     header.style.backgroundRepeat = 'no-repeat';
+    //     root.style.setProperty('--main-bg-color', '#fff');
+    //     root.style.setProperty('--main-text-color', '#000');
+    //     root.style.setProperty('--shadow', '#fff');
+    //   } else {
+    //     const header: HTMLElement = document.getElementById('header')!;
+    //     header.style.background = 'linear-gradient(-70deg, var(--block-bg) 29%, rgba(0, 0, 0, 0) 31%), url("/_nuxt/static/bg1.jpg")';
+    //     header.style.backgroundSize = 'cover';
+    //     header.style.backgroundPosition = '50% 21%';
+    //     header.style.backgroundRepeat = 'no-repeat';
+    //     root.style.setProperty('--main-bg-color', '#341c3c');
+    //     root.style.setProperty('--main-text-color', '#fff');
+    //     root.style.setProperty('--shadow', '#000');
+    //   }
 
-    };
+    // };
 
     return {
       showMenu,
       menuEl,
       changeShowMenu,
-      changeTheme
     }
   }
 })
@@ -74,6 +72,7 @@ export default defineComponent({
   position: fixed;
   top: 2vh;
   left: 2vw;
+  z-index: 5;
 }
 
 .menu-nav {

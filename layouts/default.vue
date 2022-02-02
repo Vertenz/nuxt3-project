@@ -1,17 +1,18 @@
 <template>
-    <Menu />
-    <Header />
-    <div class="padding-wrap">
-        <slot />
+    <div class="nuxt3-project">
+        <Menu />
+        <Header />
+        <div class="padding-wrap">
+            <slot />
+        </div>
+        <footer class="footer">
+            Wererate Copmuterkin {{ year }}
+        </footer>
     </div>
-    <footer class="footer">
-        Wererate Copmuterkin {{ year }}
-    </footer>
 </template>
 
 <script lang="ts">
 export default defineComponent({
-  name: 'default',
     setup() {
         // onMounted(() => {
         //     const headerEl: HTMLElement = document.getElementById('header') !;

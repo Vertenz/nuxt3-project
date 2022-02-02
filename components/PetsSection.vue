@@ -13,7 +13,6 @@
 import BasePetBlock from '~/components/UI/BasePetBlock.vue'
 
 export default defineComponent({
-  name: 'PetsSection',
   components: { BasePetBlock },
   setup() {
     const title = useTitle();
