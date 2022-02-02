@@ -1,18 +1,18 @@
 <template>
     <div class="tips-block">
         <header class="tips-header">
-            <h3 class="tips-header__name">{{ props?.tips?.title }}</h3>
+            <h2 class="tips-header__name">{{ props?.tip?.title }}</h2>
         </header>
         <div class="text-block">
-            <p class="text-block__text">{{ props?.tips?.description }}</p>
+            <p class="text-block__text">{{ props?.tip?.description }}</p>
             <code> 
                 <pre class="text-block__code">
-                    {{ props?.tips?.code }}
+                    {{ props?.tip?.code }}
                 </pre>
             </code>
         </div>
         <footer class="tips-footer">
-            <p>{{ props?.tips?.tag }}</p>
+            <p>{{ props?.tip?.tag }}</p>
         </footer>
     </div>
 </template>
@@ -22,9 +22,8 @@
     import TipsModel from '~/models/TipsModel'
 
     export default defineComponent({
-        name: 'BaseTipsBlock',
         props: {
-            tips: Object as PropType<TipsModel>
+            tip: Object as PropType<TipsModel>
         },
         setup(props) {
 

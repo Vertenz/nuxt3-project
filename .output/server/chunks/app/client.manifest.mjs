@@ -1,6 +1,6 @@
 const client_manifest = {
   "node_modules/nuxt3/dist/app/entry.mjs": {
-    "file": "entry-bdb9b50d.mjs",
+    "file": "entry-a8a30c8e.mjs",
     "src": "node_modules/nuxt3/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
@@ -11,7 +11,6 @@ const client_manifest = {
       "pages/index.vue",
       "pages/jstasks/index.vue",
       "pages/pets/index.vue",
-      "components/About.vue",
       "components/FrontendSection.vue",
       "components/Header.vue",
       "components/JsTasks.vue",
@@ -22,113 +21,100 @@ const client_manifest = {
       "components/UI/BaseButton.vue",
       "components/UI/BaseNewsBlock.vue",
       "components/UI/BasePetBlock.vue",
-      "components/UI/BaseTipsBlock.vue",
-      "components/UI/Test.vue"
-    ]
-  },
-  "components/About.vue": {
-    "file": "About-5c46ef31.mjs",
-    "src": "components/About.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_states-e0cfe737.mjs",
-      "components/UI/Test.vue",
-      "node_modules/nuxt3/dist/app/entry.mjs"
-    ],
-    "css": [
-      "assets/About.d67dac94.css"
-    ]
-  },
-  "_states-e0cfe737.mjs": {
-    "file": "states-e0cfe737.mjs",
-    "imports": [
-      "node_modules/nuxt3/dist/app/entry.mjs"
-    ]
-  },
-  "components/UI/Test.vue": {
-    "file": "Test-8e43b9fc.mjs",
-    "src": "components/UI/Test.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "node_modules/nuxt3/dist/app/entry.mjs"
+      "components/UI/BaseTaskBlock.vue",
+      "components/UI/BaseTipsBlock.vue"
     ]
   },
   "components/FrontendSection.vue": {
-    "file": "FrontendSection-0e8a8318.mjs",
+    "file": "FrontendSection-979cfabd.mjs",
     "src": "components/FrontendSection.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_states-e0cfe737.mjs",
+      "_states-baed341b.mjs",
       "node_modules/nuxt3/dist/app/entry.mjs",
       "components/UI/BaseTipsBlock.vue"
     ]
   },
+  "_states-baed341b.mjs": {
+    "file": "states-baed341b.mjs",
+    "imports": [
+      "node_modules/nuxt3/dist/app/entry.mjs"
+    ]
+  },
   "components/UI/BaseTipsBlock.vue": {
-    "file": "BaseTipsBlock-12cc0805.mjs",
+    "file": "BaseTipsBlock-5b3f1bbc.mjs",
     "src": "components/UI/BaseTipsBlock.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt3/dist/app/entry.mjs"
     ],
     "css": [
-      "assets/BaseTipsBlock.b5cd7fff.css"
+      "assets/BaseTipsBlock.78215357.css"
     ]
   },
   "components/Header.vue": {
-    "file": "Header-76f5e267.mjs",
+    "file": "Header-16b4059b.mjs",
     "src": "components/Header.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_states-e0cfe737.mjs",
+      "_states-baed341b.mjs",
       "node_modules/nuxt3/dist/app/entry.mjs"
     ],
     "css": [
-      "assets/Header.904e16a3.css"
+      "assets/Header.8a7a9342.css"
     ]
   },
   "components/JsTasks.vue": {
-    "file": "JsTasks-17dde6ac.mjs",
+    "file": "JsTasks-e64035e8.mjs",
     "src": "components/JsTasks.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_states-e0cfe737.mjs",
+      "_states-baed341b.mjs",
+      "node_modules/nuxt3/dist/app/entry.mjs",
+      "components/UI/BaseTaskBlock.vue"
+    ]
+  },
+  "components/UI/BaseTaskBlock.vue": {
+    "file": "BaseTaskBlock-4873acd4.mjs",
+    "src": "components/UI/BaseTaskBlock.vue",
+    "isDynamicEntry": true,
+    "imports": [
       "node_modules/nuxt3/dist/app/entry.mjs"
     ]
   },
   "components/Menu.vue": {
-    "file": "Menu-cc761f94.mjs",
+    "file": "Menu-3d1855c7.mjs",
     "src": "components/Menu.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt3/dist/app/entry.mjs",
-      "_useMenuEl-96356697.mjs",
-      "_states-e0cfe737.mjs"
+      "_useMenuEl-b3ca2a71.mjs"
     ],
     "css": [
-      "assets/Menu.9c470dec.css"
+      "assets/Menu.fd5a8b02.css"
     ]
   },
-  "_useMenuEl-96356697.mjs": {
-    "file": "useMenuEl-96356697.mjs",
+  "_useMenuEl-b3ca2a71.mjs": {
+    "file": "useMenuEl-b3ca2a71.mjs",
     "imports": [
       "node_modules/nuxt3/dist/app/entry.mjs"
     ]
   },
   "components/NewsSection.vue": {
-    "file": "NewsSection-1951ea9b.mjs",
+    "file": "NewsSection-40864d15.mjs",
     "src": "components/NewsSection.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt3/dist/app/entry.mjs",
-      "_states-e0cfe737.mjs",
+      "_states-baed341b.mjs",
       "components/UI/BaseNewsBlock.vue"
     ],
     "css": [
-      "assets/NewsSection.a695c997.css"
+      "assets/NewsSection.a35beed1.css"
     ]
   },
   "components/UI/BaseNewsBlock.vue": {
-    "file": "BaseNewsBlock-6585f93c.mjs",
+    "file": "BaseNewsBlock-a713d59c.mjs",
     "src": "components/UI/BaseNewsBlock.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -139,63 +125,63 @@ const client_manifest = {
     ]
   },
   "components/PetsSection.vue": {
-    "file": "PetsSection-1f0543dd.mjs",
+    "file": "PetsSection-2df8abab.mjs",
     "src": "components/PetsSection.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_states-e0cfe737.mjs",
+      "_states-baed341b.mjs",
       "node_modules/nuxt3/dist/app/entry.mjs",
       "components/UI/BasePetBlock.vue"
     ],
     "css": [
-      "assets/PetsSection.ec364f0f.css"
+      "assets/PetsSection.09ea07db.css"
     ]
   },
   "components/UI/BasePetBlock.vue": {
-    "file": "BasePetBlock-18a36f55.mjs",
+    "file": "BasePetBlock-d45aceb4.mjs",
     "src": "components/UI/BasePetBlock.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt3/dist/app/entry.mjs"
     ],
     "css": [
-      "assets/BasePetBlock.3be3078c.css"
+      "assets/BasePetBlock.6b7ecb37.css"
     ]
   },
   "components/Sections.vue": {
-    "file": "Sections-270f0952.mjs",
+    "file": "Sections-458e5de2.mjs",
     "src": "components/Sections.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_states-e0cfe737.mjs",
-      "_useMenuEl-96356697.mjs",
+      "_states-baed341b.mjs",
+      "_useMenuEl-b3ca2a71.mjs",
       "components/UI/BaseButton.vue",
       "node_modules/nuxt3/dist/app/entry.mjs"
     ],
     "css": [
-      "assets/Sections.b4154b4f.css"
+      "assets/Sections.34696360.css"
     ]
   },
   "components/UI/BaseButton.vue": {
-    "file": "BaseButton-25b2199a.mjs",
+    "file": "BaseButton-91c7a851.mjs",
     "src": "components/UI/BaseButton.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt3/dist/app/entry.mjs"
     ],
     "css": [
-      "assets/BaseButton.14a28d3e.css"
+      "assets/BaseButton.0c9dacee.css"
     ]
   },
   "pages/404.vue": {
-    "file": "404-65098460.mjs",
+    "file": "404-356ab4f0.mjs",
     "src": "pages/404.vue",
     "isDynamicEntry": true,
     "imports": [
       "components/Sections.vue",
       "node_modules/nuxt3/dist/app/entry.mjs",
-      "_states-e0cfe737.mjs",
-      "_useMenuEl-96356697.mjs",
+      "_states-baed341b.mjs",
+      "_useMenuEl-b3ca2a71.mjs",
       "components/UI/BaseButton.vue"
     ],
     "css": [
@@ -203,70 +189,71 @@ const client_manifest = {
     ]
   },
   "pages/exciting/index.vue": {
-    "file": "index-d94a9285.mjs",
+    "file": "index-b07b46dc.mjs",
     "src": "pages/exciting/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "components/NewsSection.vue",
       "node_modules/nuxt3/dist/app/entry.mjs",
-      "_states-e0cfe737.mjs",
+      "_states-baed341b.mjs",
       "components/UI/BaseNewsBlock.vue"
     ]
   },
   "pages/frontend/index.vue": {
-    "file": "index-6c22ddaa.mjs",
+    "file": "index-d18cc844.mjs",
     "src": "pages/frontend/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "components/FrontendSection.vue",
       "node_modules/nuxt3/dist/app/entry.mjs",
-      "_states-e0cfe737.mjs",
+      "_states-baed341b.mjs",
       "components/UI/BaseTipsBlock.vue"
     ]
   },
   "pages/index.vue": {
-    "file": "index-50a8e234.mjs",
+    "file": "index-90dbc4bd.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "components/Sections.vue",
       "node_modules/nuxt3/dist/app/entry.mjs",
-      "_states-e0cfe737.mjs",
-      "_useMenuEl-96356697.mjs",
+      "_states-baed341b.mjs",
+      "_useMenuEl-b3ca2a71.mjs",
       "components/UI/BaseButton.vue"
     ]
   },
   "pages/jstasks/index.vue": {
-    "file": "index-7d3dbd1e.mjs",
+    "file": "index-e093051e.mjs",
     "src": "pages/jstasks/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "components/JsTasks.vue",
       "node_modules/nuxt3/dist/app/entry.mjs",
-      "_states-e0cfe737.mjs"
+      "_states-baed341b.mjs",
+      "components/UI/BaseTaskBlock.vue"
     ]
   },
   "pages/pets/index.vue": {
-    "file": "index-4d476ec7.mjs",
+    "file": "index-ee4535b5.mjs",
     "src": "pages/pets/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "components/PetsSection.vue",
       "node_modules/nuxt3/dist/app/entry.mjs",
-      "_states-e0cfe737.mjs",
+      "_states-baed341b.mjs",
       "components/UI/BasePetBlock.vue"
     ]
   },
   "layouts/default.vue": {
-    "file": "default-71b7581e.mjs",
+    "file": "default-fdde289c.mjs",
     "src": "layouts/default.vue",
     "isDynamicEntry": true,
     "imports": [
       "components/Menu.vue",
       "components/Header.vue",
       "node_modules/nuxt3/dist/app/entry.mjs",
-      "_useMenuEl-96356697.mjs",
-      "_states-e0cfe737.mjs"
+      "_useMenuEl-b3ca2a71.mjs",
+      "_states-baed341b.mjs"
     ],
     "css": [
       "assets/default.b69fd732.css"

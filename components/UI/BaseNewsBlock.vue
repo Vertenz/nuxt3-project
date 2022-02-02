@@ -1,19 +1,19 @@
 <template>
     <div class="news-block">
-            <a :href="props?.news?.link" target="_blank" rel="noopener noreferrer">
-                <header class="news-header">
-                    <h4 class="news-header__h">{{ props?.news?.title }}</h4>
-                    <p class="news-header__type">{{ props?.news?.type }}</p>
-                </header>
-                <div class="text-block">
-                    <img :src="`/news/${props?.news?.technology}.svg`"
-                        :alt="`статья о ${props?.news?.technology}`" class="text-block__img">
-                    <p class="text-block__description">{{ props?.news?.description }}</p>
-                </div>
-                <footer class="news-footer">
-                    <p>Теги: {{ props?.news?.technology }}, {{ props?.news?.type }}</p>
-                </footer>
-            </a>
+        <a :href="props?.news?.link" target="_blank" rel="noopener noreferrer">
+            <header class="news-header">
+                <h4 class="news-header__h">{{ props?.news?.title }}</h4>
+                <p class="news-header__type">{{ props?.news?.type }}</p>
+            </header>
+            <div class="text-block">
+                <img :src="`/news/${props?.news?.technology}.svg`" :alt="`статья о ${props?.news?.technology}`"
+                    class="text-block__img">
+                <p class="text-block__description">{{ props?.news?.description }}</p>
+            </div>
+            <footer class="news-footer">
+                <p>Теги: {{ props?.news?.technology }}, {{ props?.news?.type }}</p>
+            </footer>
+        </a>
     </div>
 </template>
 
@@ -22,12 +22,12 @@
     import NewsModel from '~~/models/NewsModel'
 
     export default defineComponent({
-        name: 'BaseNewsBlock',
         props: {
-            news: Object as PropType<NewsModel>
+            news: Object as PropType < NewsModel >
         },
         setup(props) {
-            
+
+
             return {
                 props
             }

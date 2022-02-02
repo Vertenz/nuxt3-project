@@ -1,1 +1,0 @@
-import t from"./Sections-270f0952.mjs";import{_ as o,c as n,a as s,o as c}from"./entry-bdb9b50d.mjs";import"./states-e0cfe737.mjs";import"./useMenuEl-96356697.mjs";import"./BaseButton-25b2199a.mjs";const r={};function m(a,_){const e=t;return c(),n("div",null,[s(e)])}var l=o(r,[["render",m]]);export{l as default};

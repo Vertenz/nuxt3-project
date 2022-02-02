@@ -10,7 +10,6 @@
 import BaseButton from "./UI/BaseButton.vue";
 
 export default defineComponent({
-    name: 'Sections',
     components: { BaseButton },
     setup() {
         const title = useTitle();
