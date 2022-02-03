@@ -37,6 +37,12 @@ export default defineComponent({
         margin-bottom: 1em;
         box-shadow: 2px 6px 10px black;
         cursor: pointer;
+        &__icon {
+          width: 80px;
+          & > img {
+            width: 55px;
+          }
+        }
         &:hover {
             box-shadow: 0 0 0 black;
         }
