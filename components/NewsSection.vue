@@ -1,10 +1,4 @@
 <template>
-  <div class="transition-fix">
-
-    <head>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    </head>
-
     <section class="news-section">
       <div class="news-up">
         <h1>Новости / Статьи / Полезные ресурсы</h1>
@@ -32,7 +26,6 @@
         </div>
       </transition>
     </section>
-  </div>
 </template>
 
 <script lang="ts">
