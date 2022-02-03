@@ -1,13 +1,16 @@
 <template>
     <div class="nuxt3-project">
+
+        <head>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        </head>
+
         <Menu />
         <Header />
         <div class="padding-wrap">
             <slot />
         </div>
-        <footer class="footer">
-            Wererate Copmuterkin {{ year }}
-        </footer>
+        <TheFooter />
     </div>
 </template>
 
@@ -26,7 +29,6 @@ export default defineComponent({
         //         }
         //     })
         // })
-
         // function hideHeader(el: HTMLElement) {
         //     let start = Date.now();
         //     console.log('close')
@@ -55,11 +57,6 @@ export default defineComponent({
         //                                       display: flex;
         //                                       transform: rotate(180deg);`;
         // }
-
-        const year: Number = new Date().getFullYear()
-
-
-        return{ year }
     }
 })
 </script>
