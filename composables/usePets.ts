@@ -8,7 +8,7 @@ export const usePets = () =>
             year: 2021,
             link: 'https://github.com/Vertenz/task1/tree/prod',
             page: 'https://vertenz.github.io/task1/',
-            description: 'HTML5, SCSS, simple adaptive (media response), vanilla JS(ES 6), webpack (html-webpack-plugin, clean-webpack-plugin, mini-css-extract-plugin, copy-webpack-plugin)',
+            description: 'Тестовое задание, необходимо было быстро сверстать один из стандартных фигмавских шаблонов, используя HTML5, SCSS, simple adaptive (media response), vanilla JS(ES 6), webpack (html-webpack-plugin, clean-webpack-plugin, mini-css-extract-plugin, copy-webpack-plugin)',
             techs: 'HTML, CSS, JavaScript, Webpack'
         },
         {
@@ -17,7 +17,7 @@ export const usePets = () =>
             year: 2021,
             link: 'https://github.com/Vertenz/nuxt-delta/tree/prod',
             page: 'https://deltapilot.xyz/',
-            description: 'Vue, Nuxt (axios, pwa, robots), Vuetify, PHP (mailer, SOAP)',
+            description: 'Прототип сайта. Использовались Vue/Nuxt(2)/PWA. Для запросов использовался "axios". Для макета использовался Vuetify. Для отправки данных PHP (mailer, SOAP)',
             techs: 'Vue, Nuxt (axios, pwa, robots), Vuetify, PHP (mailer, SOAP), Scss'
         },
         {
@@ -26,7 +26,7 @@ export const usePets = () =>
             year: 2020,
             link: 'https://github.com/Vertenz/phpOOP',
             page: false,
-            description: 'Try to create php framework',
+            description: 'Попытка сделать фреймворк, чтобы лучше изучить PHP',
             techs: 'PHP > 7.0'
         },
         {
@@ -35,7 +35,7 @@ export const usePets = () =>
             year: 2020,
             link: 'https://github.com/Vertenz/delta/tree/gitPages',
             page: 'https://vertenz.github.io/delta/',
-            description: 'Vue, PHP (mailer, SOAP)',
+            description: 'Pet сайт, для изучения Vue(2&3). Исключительно для ознакомительного просмотра. Готовое разрешение от 261х124 до 400х600 (далее править меню) от 760 править шрифты, далее десктоп',
             techs: 'Vue, PHP (mailer, SOAP)'
         },
         {
@@ -44,7 +44,7 @@ export const usePets = () =>
             year: 2021,
             link: 'https://github.com/Vertenz/learn-react',
             page: 'https://vertenz.github.io/learn-react/',
-            description: 'this is my react training project. I`m getting a little bored with all usual staff like to-do list, input form, ect. That is exactly why I created This :) You can use the Adventure mode or Text version to see other my project. I used here React, functional components, react-router-dom, lazy, useEffect, useRef, useState',
+            description: 'Это мой первый тренировочный проект по реакту. Немного устав от туду списков и обычных форм решил сделать что-то более интересное, по этому решил создать что-то более игроинтерактивное. Использовал React, functional components, react-router-dom, lazy, useEffect, useRef, useState',
             techs: 'React'
         },
     ])

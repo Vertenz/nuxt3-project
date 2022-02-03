@@ -26,6 +26,7 @@ export default defineComponent({
     .footer {
         display: flex;
         justify-content: space-between;
+        margin-top: 1em;
     }
     .contact {
         &__link {
