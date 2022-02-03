@@ -1,9 +1,10 @@
 <template>
-  <div>
-      <div v-for="task in arrTasks" :key="task.id">
+  <section>
+    <h1>Вопросы / задачи по JavaScript</h1>
+      <div v-for="task in arrTasks" :key="task.id" class="task-sections">
         <BaseTaskBlock :task="task"/>
       </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

@@ -2,7 +2,8 @@ import { useState } from "#app";
 import TasksModel from "~~/models/TasksModel";
 
 export const useTasks = () =>
-    useState < TasksModel[] > ('task', () => [{
+    useState < TasksModel[] > ('task', () => [
+        {
         id: 1,
         title: 'Типы данны в JavaScript',
         description: 'Перечилисть все типы данных и их отличия',
@@ -43,4 +44,24 @@ export const useTasks = () =>
             Never: также представляет отсутствие значения и используется в качестве возвращаемого типа функций, которые генерируют или возвращают ошибку
         `,
         code: false
-    }])
+    },
+    {
+        id: 2,
+        title: 'Что такое объектная обертка (Wrapper Objects)?',
+        description: 'свойства и методы у примитивов',
+        answer: `Примитивы строка, число и boolean имеют свойства и методы, несмотря на то, что они не являются объектами, 
+                Name — это строка (примитивный тип), 
+                у которого нет свойств и методов, но когда мы вызываем метод toUpperCase(), это приводит не к ошибке, а к «MARKO».
+            Причина такого поведения заключается в том, что name временно преобразуется в объект. У каждого примитива, кроме null 
+            и undefined, есть объект-обертка. Такими объектами являются String, Number, Boolean, Symbol и BigInt 
+            \n (взяты из https://habr.com/ru/post/486820/)`,
+        code: `\n
+        let name = 'marko'
+
+        console.log(typeof name) // string
+        console.log(name.toUpperCase()) // MARKO
+        
+        console.log(new String(name).toUpperCase()) // MARKO
+        `
+    }
+])

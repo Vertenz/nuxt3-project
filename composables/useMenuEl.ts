@@ -6,28 +6,28 @@ export const useMenuEL = () =>
         [
             {
                 id: 0,
-                imgSrc: '/ic-test.png',
+                imgSrc: '/btn/project.svg',
                 srcLink: '/pets',
                 title: 'Мои проекты',
                 description: 'pet и доступные и к просмотру примеры работ, сделанные мной :)'
             },
             {
                 id: 1,
-                imgSrc: '/ic-test.png',
+                imgSrc: '/btn/task.svg',
                 srcLink: '/jstasks',
                 title: 'Задачки JS',
                 description: 'Задачки для тренировки javascript/typescript'
             },
             {
                 id: 2,
-                imgSrc: '/ic-test.png',
+                imgSrc: '/btn/front.svg',
                 srcLink: '/frontend',
                 title: 'Заметки фронтендера',
                 description: 'Шпаргалки по HTML, CSS, Vue, React'
             },
             {
                 id: 3,
-                imgSrc: '/ic-test.png',
+                imgSrc: '/btn/news.svg',
                 srcLink: '/exciting',
                 title: 'Новости/Статьи/Идеи',
                 description: 'Что-то новое (или не очень) и интересное в WebDev'
